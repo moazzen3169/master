@@ -93,13 +93,36 @@
       transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
       overflow-x: hidden;
     }
+
+    svg {
+      max-width: 100%;
+    }
+
+    #page-skeleton {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    @media (min-width: 640px) {
+      #page-skeleton {
+        padding: 2rem;
+      }
+    }
   </style>
 
-  <!-- Non-blocking Async Stylesheet -->
-  <link rel="preload" href="./output.5d44b880.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="./output.5d44b880.css">
-  </noscript>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./output.42fa3173.css">
 </head>
 
 <body
