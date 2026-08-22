@@ -72,13 +72,85 @@
       transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
       overflow-x: hidden;
     }
+
+    svg {
+      max-width: 100%;
+    }
+
+    #page-skeleton {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    @media (min-width: 640px) {
+      #page-skeleton {
+        padding: 2rem;
+      }
+    }
   </style>
 
-  <!-- Non-blocking Async Stylesheet -->
-  <link rel="preload" href="./output.5d44b880.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="./output.5d44b880.css"></noscript>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./output.42fa3173.css">
 </head>
 <body class="bg-bg-main text-fg-main antialiased selection:bg-primary-accent/20 selection:text-primary-accent overflow-x-hidden">
+
+  <!-- Page Skeleton Overlay for Blog Detail Page -->
+  <div id="page-skeleton" class="fixed inset-0 z-[100] bg-bg-main flex flex-col justify-between p-4 sm:p-8 pointer-events-none transition-opacity duration-500 overflow-hidden">
+    <!-- Nav Skeleton -->
+    <div class="max-w-[1280px] w-full mx-auto flex items-center justify-between h-20 px-4 shrink-0">
+      <div class="w-24 h-8 bg-muted-bg/80 rounded-xl animate-pulse"></div>
+      <div class="hidden md:flex gap-6">
+        <div class="w-16 h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+        <div class="w-16 h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+        <div class="w-16 h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+      </div>
+      <div class="flex gap-3">
+        <div class="w-11 h-11 bg-muted-bg/80 rounded-xl animate-pulse"></div>
+        <div class="w-28 h-11 bg-muted-bg/80 rounded-xl animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Article Content Skeleton Container -->
+    <div class="max-w-[1024px] w-full mx-auto px-4 sm:px-6 lg:px-8 my-auto space-y-6">
+      <!-- Breadcrumb & Article Header Skeleton -->
+      <div class="space-y-4 text-right">
+        <div class="w-48 h-3 bg-muted-bg/60 rounded-md animate-pulse"></div>
+        <div class="w-28 h-6 bg-primary-accent/20 rounded-full animate-pulse"></div>
+        <div class="w-4/5 h-10 sm:h-12 bg-muted-bg/80 rounded-2xl animate-pulse"></div>
+        <div class="flex items-center gap-4 pt-2">
+          <div class="w-12 h-12 rounded-full bg-muted-bg/80 animate-pulse"></div>
+          <div class="space-y-1.5">
+            <div class="w-28 h-4 bg-muted-bg/80 rounded-md animate-pulse"></div>
+            <div class="w-36 h-3 bg-muted-bg/60 rounded-md animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image Skeleton -->
+      <div class="w-full aspect-[16/9] bg-muted-bg/80 rounded-3xl animate-pulse"></div>
+
+      <!-- Body Paragraph Lines Skeleton -->
+      <div class="space-y-3 pt-2">
+        <div class="w-full h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+        <div class="w-11/12 h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+        <div class="w-4/5 h-4 bg-muted-bg/60 rounded-md animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Footer Spacer -->
+    <div class="h-6"></div>
+  </div>
 
   <!-- ==========================================
        00 — NAVIGATION
